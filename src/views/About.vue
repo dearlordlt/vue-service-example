@@ -6,11 +6,10 @@
 </template>
 
 <script>
-/* eslint-disable */
 import globalSrv from "../services/common.srv.js";
 
 export default {
-  name: "home",
+  name: "about",
   data: function() {
     return {
       list: globalSrv.myList
