@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>This is an home page</h1>
+    <input v-model="name" />
+    <a href="javascript:" @click="addToList">ADD</a>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import globalSrv from "../services/common.srv.js";
 
 export default {
   name: "home",
-  components: {
-    HelloWorld
+  data: function() {
+    return {
+      name: ""
+    };
+  },
+  methods: {
+    addToList() {
+      if (this.name != "") {
+        globalSrv.myList.push(this.name);
+      }
+      this.name = "";
+    }
   }
 };
 </script>
